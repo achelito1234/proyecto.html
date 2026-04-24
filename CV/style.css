@@ -1,0 +1,164 @@
+/* NOTAS DE PROGRAMADOR JR: 
+   He separado el CSS para que el HTML quede más limpio. 
+   He usado variables (:root) para que puedas cambiar los colores fácilmente en un solo lugar.
+*/
+
+:root {
+    --bg-gris-lateral: #a8aeb4;    /* Gris de la columna izquierda */
+    --rosa-claro: #f4e1e1;         /* Rosa de los banners de títulos */
+    --texto-principal: #333333;    /* Color de fuente para nombres y títulos */
+    --texto-secundario: #666666;   /* Color para fechas y detalles */
+    --blanco: #ffffff;
+    --borde-foto: #b39f90;         /* Color del marco café/beige de la foto */
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    background-color: #e0e0e0;
+    display: flex;
+    justify-content: center;
+    padding: 40px 0;
+}
+
+/* Contenedor tipo hoja A4 */
+.cv-container {
+    width: 800px;
+    min-height: 1100px;
+    background-color: var(--blanco);
+    display: flex;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+}
+
+/* --- COLUMNA IZQUIERDA (Gris) --- */
+.sidebar {
+    width: 38%;
+    background-color: var(--bg-gris-lateral);
+    padding: 40px 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Marco de la foto igual a la referencia */
+.photo-box {
+    border: 8px solid var(--blanco); /* Borde blanco grueso */
+    outline: 2px solid var(--borde-foto); /* El marco exterior delgado */
+    line-height: 0;
+    margin-bottom: 40px;
+}
+
+.photo-box img {
+    width: 220px;
+    height: auto;
+}
+
+/* Títulos tipo "pastilla" blanca */
+.sidebar h2 {
+    background-color: var(--blanco);
+    color: var(--texto-principal);
+    width: 100%;
+    text-align: center;
+    padding: 10px 0;
+    border-radius: 25px;
+    font-size: 1rem;
+    letter-spacing: 2px;
+    margin-bottom: 20px;
+}
+
+.sidebar p, .sidebar li {
+    font-size: 0.85rem;
+    line-height: 1.6;
+    color: var(--texto-principal);
+    margin-bottom: 25px;
+}
+
+.contact-item {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    margin-bottom: 15px;
+}
+
+/* Estilo para los iconos en la carpeta CV */
+.contact-item img {
+    width: 20px;
+    margin-right: 15px;
+}
+
+/* --- COLUMNA DERECHA (Blanca) --- */
+.main-content {
+    width: 62%;
+    padding: 60px 50px;
+}
+
+header {
+    text-align: right;
+    margin-bottom: 50px;
+}
+
+/* Fuente caligráfica para el nombre */
+.name-accent {
+    font-family: 'Playfair Display', serif;
+    font-size: 4.5rem;
+    line-height: 0.8;
+    color: var(--texto-principal);
+    display: block;
+}
+
+.job-title {
+    font-weight: 700;
+    font-size: 1.1rem;
+    letter-spacing: 1px;
+    margin-top: 15px;
+    border-bottom: 4px solid var(--rosa-claro); /* Línea decorativa rosa */
+    display: inline-block;
+}
+
+/* Banners de títulos de sección */
+.section-banner {
+    background-color: var(--rosa-claro);
+    padding: 8px 15px;
+    font-weight: 700;
+    font-size: 1rem;
+    margin-bottom: 20px;
+    border-radius: 4px;
+}
+
+.entry {
+    margin-bottom: 25px;
+}
+
+.entry h3 {
+    font-size: 1.05rem;
+    margin-bottom: 5px;
+}
+
+.entry .date {
+    font-weight: 700;
+    color: var(--texto-secundario);
+    font-size: 0.85rem;
+}
+
+.updates-list {
+    list-style: none;
+}
+
+.updates-list li {
+    margin-bottom: 20px;
+    padding-left: 20px;
+    position: relative;
+}
+
+/* Viñeta personalizada */
+.updates-list li::before {
+    content: "•";
+    position: absolute;
+    left: 0;
+    color: var(--texto-principal);
+}
