@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CV Axel Hernández</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700&family=Playfair+Display+SC:wght@400;700&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            /* NOTA JUNIOR: Definición de variables de color basadas en la imagen de referencia. */
+            --bg-gris: #a8aeb4; /* Gris del lateral */
+            --bg-blanco: #ffffff; /* Fondo principal */
+            --color-titulo: #333333; /* Gris oscuro para textos principales */
+            --color-subtitulo: #666666; /* Gris medio para subtítulos y años */
+            --highlight-pink: #f4e1e1; /* Fondo rosado claro para subtítulos en la columna blanca */
+            --border-frame: #b39f90; /* Color del marco de la foto */
+        }
+
+        body {
+            margin: 0;
+            font-family: 'Montserrat', sans-serif; /* Fuente base */
+            background-color: #f0f0f0; /* Fondo sutil para el cuerpo del navegador */
+            color: var(--color-titulo);
+            display: flex;
+            justify-content: center; /* Centra el CV en la pantalla */
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        /* NOTA JUNIOR: Contenedor principal que simula una hoja de papel (A4-ish). */
+        .cv-container {
+            width: 794px; /* Ancho aproximado para un diseño imprimible */
+            height: 1123px; /* Alto aproximado para un diseño imprimible */
+            background-color: var(--bg-blanco);
+            display: flex; /* Divide la página en dos columnas */
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1); /* Efecto de sombra */
+        }
+
+        /* ----- COLUMNA IZQUIERDA (Gris) ----- */
+        .left-column {
+            width: 38%; /* Proporción de la columna izquierda */
+            background-color: var(--bg-gris);
+            padding: 40px;
+            box-sizing: border-box; /* Incluye padding en el ancho */
+            display: flex;
+            flex-direction: column; /* Apila los elementos verticalmente */
+            align-items: center; /* Centra los elementos horizontalmente */
+            color: var(--color-titulo);
+        }
+
+        .photo-container {
+            margin-bottom: 40px;
+            width: 100%;
+            text-align: center;
+        }
+
+        .photo-container img {
+            width: 250px; /* Ancho de la foto */
+            height: auto;
+            border: 8px solid var(--bg-blanco); /* Borde blanco de la foto */
+            outline: 2px solid var(--border-frame); /* Borde marrón exterior de la foto */
+            border-radius: 2px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+        }
+
+        /* NOTA JUNIOR: Títulos de sección con fondo blanco estilo pastilla. */
+        .left-column h2 {
+            font-size: 1.2rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            background-color: var(--bg-blanco);
+            color: #333333;
+            padding: 8px 30px;
+            border-radius: 25px; /* Bordes redondeados */
+            margin-bottom: 20px;
+            margin-top: 0;
+            display: inline-block;
+            box-shadow: 0 1px 2px rgba(0,0,0,0.1);
+        }
+
+        .left-column p {
+            font-size: 0.85rem;
+            line-height: 1.5; /* Espaciado entre líneas */
+            text-align: justify; /* Texto justificado como en la imagen */
+            margin-top: 0;
+            margin-bottom: 30px;
+        }
+
+        .contact-list {
+            list-style: none; /* Elimina viñetas */
+            padding: 0;
+            margin: 0;
+            width: 100%;
+            font-size: 0.9rem;
+            color: var(--color-subtitulo);
+        }
+
+        .contact-list li {
+            margin-bottom: 15px;
+            display: flex; /* Alinea icono y texto en una línea */
+            align-items: flex-start; /* Alinea el texto a la parte superior del icono si hay varias líneas */
+        }
+
+        /* NOTA JUNIOR: Ajuste de iconos. Se asume que son imágenes en blanco y negro. */
+        .contact-list img {
+            width: 20px; /* Tamaño del icono */
+            height: 20px;
+            margin-right: 15px; /* Espacio entre icono y texto */
+            margin-top: 2px; /* Pequeño ajuste de alineación vertical */
+        }
+
+        .idiomas-list {
+            list-style: square; /* Viñetas cuadradas */
+            padding-left: 20px;
+            width: 100%;
+            color: var(--color-subtitulo);
+            font-size: 0.9rem;
+        }
+
+        .idiomas-list li {
+            margin-bottom: 10px;
+        }
+
+
+        /* ----- COLUMNA DERECHA (Blanca) ----- */
+        .right-column {
+            width: 62%; /* Proporción de la columna derecha */
+            padding: 60px 40px;
+            box-sizing: border-box;
+            display: flex;
+            flex-direction: column;
+        }
+
+        header {
+            text-align: right; /* Alinea el encabezado a la derecha */
+            margin-bottom: 40px;
+        }
+
+        /* NOTA JUNIOR: Uso de fuente caligráfica para el nombre. */
+        header h1 {
+            font-family: 'Playfair Display SC', serif;
+            font-weight: 400;
+            font-size: 4rem;
+            margin: 0;
+            color: var(--color-titulo);
+            letter-spacing: -2px;
+        }
+
+        header h2 {
+            font-size: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            margin: 5px 0 10px 0;
+            font-weight: 700;
+            color: var(--color-titulo);
+        }
+
+        /* NOTA JUNIOR: Subrayado rosado sutil debajo de "Estudiante de Preparatoria". */
+        header::after {
+            content: '';
+            display: block;
+            width: 100px;
+            height: 3px;
+            background-color: var(--highlight-pink);
+            float: right;
+            border-radius: 2px;
+        }
+
+        /* NOTA JUNIOR: Títulos de sección con fondo rosado sutil y texto claro. */
+        .right-column h2.section-title {
+            font-size: 1.1rem;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            background-color: var(--highlight-pink);
+            color: #4a4a4a;
+            padding: 8px 15px;
+            border-radius: 4px;
+            margin-top: 0;
+            margin-bottom: 25px;
+            font-weight: 700;
+        }
+
+        .content-block {
+            margin-bottom: 30px;
+            display: flex; /* Para alinear icono y texto */
+            align-items: flex-start;
+        }
+
+        /* Estilo para los iconos de formación y cursos */
+        .content-icon {
+            width: 40px;
+            height: 40px;
+            margin-right: 15px;
+            margin-top: 5px; /* Ajuste vertical */
+        }
+
+        .content-block h3 {
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: var(--color-titulo);
+            margin: 0 0 5px 0;
+            text-transform: uppercase;
+        }
+
+        .content-block p {
+            font-size: 0.95rem;
+            color: var(--color-titulo);
+            margin: 0 0 2px 0;
+        }
+
+        .content-block .dates {
+            font-size: 0.85rem;
+            font-weight: 700;
+            color: var(--color-subtitulo);
+            margin-top: 0;
+        }
+
+        .actualizaciones-list {
+            list-style: disc; /* Viñetas redondas */
+            padding-left: 20px;
+            color: var(--color-titulo);
+            font-size: 0.95rem;
+            margin: 0;
+        }
+
+        .actualizaciones-list li {
+            margin-bottom: 20px;
+            display: flex; /* Para alinear el logo y el texto */
+            align-items: flex-start;
+        }
+
+        .actualizaciones-list li .course-info {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .actualizaciones-list li strong {
+            display: block;
+            margin-bottom: 2px;
+            text-transform: uppercase;
+        }
+
+        .actualizaciones-list li span {
+            display: block;
+            font-size: 0.85rem;
+            font-weight: 700;
+            color: var(--color-subtitulo);
+        }
+
+        /* Ajuste específico para el logo de Coursera */
+        .coursera-logo {
+            width: 40px;
+            height: auto; /* Mantener proporción */
+            margin-right: 15px;
+            margin-top: 5px;
+        }
+
+    </style>
+</head>
+<body>
+
+    <div class="cv-container">
+        <aside class="left-column">
+            <div class="photo-container">
+                <img src="CV/foto_axel.jpg" alt="Foto de Axel Hernández">
+            </div>
+
+            <h2>SOBRE MÍ</h2>
+            <p>
+                Soy una persona responsable, disciplinada, con carisma, me gusta aprender nuevas cosas, ver y descubrir el cómo se pueden hacer y mejorar. Disfruto hacer ejercicio y cocinar, ya que me ayuda mucho manteniéndome activo y desarrollo nuevas creatividades. Además tengo la facilidad de trabajar en equipo y ser respetuoso, ayudando y dando opciones para un buen trabajo.
+            </p>
+
+            <h2>CONTACTO</h2>
+            <ul class="contact-list">
+                <li>
+                    <img src="CV/icon-phone.png" alt="Icono de teléfono">
+                    7296321090
+                </li>
+                <li>
+                    <img src="CV/icon-mail.png" alt="Icono de correo electrónico">
+                    ah098742@gmail.com
+                </li>
+                <li>
+                    <img src="CV/icon-location.png" alt="Icono de ubicación">
+                    CALLE AV. principal S/N<br>
+                    SAN FELIPE Y SANTIAGO.JIQUIPILCO<br>
+                    MEXICO
+                </li>
+            </ul>
+
+            <h2 style="margin-top: 40px;">IDIOMAS</h2>
+            <ul class="idiomas-list">
+                <li>Español</li>
+            </ul>
+        </aside>
+
+        <main class="right-column">
+            <header>
+                <h1>Axel</h1>
+                <h1 style="margin-top: -20px; margin-bottom: 10px;">Hernández</h1>
+                <h2>ESTUDIANTE DE PRERATORIA</h2>
+            </header>
+
+            <section>
+                <h2 class="section-title">FORMACIÓN ACADEMICA</h2>
+                
+                <div class="content-block">
+                    <img src="CV/icono-secundaria.png" alt="Icono Escuela Secundaria" class="content-icon">
+                    <div>
+                        <h3>INSTITUTO CULTURAL CANADIENSE</h3>
+                        <p>Secundaria</p>
+                        <p class="dates">2020-2023</p>
+                    </div>
+                </div>
+
+                <div class="content-block">
+                    <img src="CV/icono-preparatoria.png" alt="Icono Escuela Preparatoria" class="content-icon">
+                    <div>
+                        <h3>INSTITUTO CULTURAL CANADIENSE</h3>
+                        <p>Preparatoria</p>
+                        <p class="dates">2023-2026</p>
+                    </div>
+                </div>
+            </section>
+
+            <section style="margin-top: 20px;">
+                <h2 class="section-title">ACTUALIZACIONES</h2>
+                
+                <ul class="actualizaciones-list">
+                    <li>
+                        <img src="CV/logo-coursera.png" alt="Logo Coursera" class="coursera-logo">
+                        <div class="course-info">
+                            <strong>CURSO DE INTRODUCCIONES A LAS REDES SOCIALES</strong>
+                            <span>MARZO 2026</span>
+                        </div>
+                    </li>
+                    <li>
+                        <img src="CV/logo-coursera.png" alt="Logo Coursera" class="coursera-logo">
+                        <div class="course-info">
+                            <strong>CURSO DE COMO INVERTIR MI IDEA DE EMPRESA</strong>
+                            <span>MARZO 2025</span>
+                        </div>
+                    </li>
+                </ul>
+            </section>
+        </main>
+    </div>
+
+</body>
+</html>
