@@ -34,10 +34,10 @@
             height: 1123px;
             background-color: var(--bg-blanco);
             display: flex;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
         }
 
-        /* ----- COLUMNA IZQUIERDA ----- */
+        /* COLUMNA IZQUIERDA */
         .left-column {
             width: 38%;
             background-color: var(--bg-gris);
@@ -46,94 +46,141 @@
             display: flex;
             flex-direction: column;
             align-items: center;
+            color: var(--color-titulo);
+        }
+
+        .photo-container {
+            margin-bottom: 40px;
+            width: 100%;
+            text-align: center;
         }
 
         .photo-container img {
-            width: 250px;
+            width: 200px;
+            height: auto;
             border: 8px solid var(--bg-blanco);
             outline: 2px solid var(--border-frame);
-            margin-bottom: 40px;
+            border-radius: 2px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.2);
         }
 
         .left-column h2 {
-            font-size: 1.1rem;
+            font-size: 1.2rem;
             text-transform: uppercase;
             letter-spacing: 2px;
             background-color: var(--bg-blanco);
-            padding: 8px 25px;
+            color: #333333;
+            padding: 8px 30px;
             border-radius: 25px;
             margin-bottom: 20px;
+            margin-top: 0;
+            display: inline-block;
         }
 
-        /* ----- COLUMNA DERECHA ----- */
-        .right-column {
-            width: 62%;
-            padding: 60px 40px;
-            box-sizing: border-box;
-        }
-
-        header {
-            text-align: right;
-            margin-bottom: 50px;
-        }
-
-        header h1 {
-            font-family: 'Playfair Display SC', serif;
-            font-size: 3.8rem;
-            margin: 0;
-            line-height: 0.9;
-        }
-
-        .section-title {
-            font-size: 1rem;
-            text-transform: uppercase;
-            background-color: var(--highlight-pink);
-            padding: 10px 15px;
-            border-radius: 4px;
+        .left-column p {
+            font-size: 0.85rem;
+            line-height: 1.5;
+            text-align: justify;
             margin-bottom: 30px;
-            font-weight: 700;
         }
 
-        /* --- FORMATO PARA FILAS CON IMAGEN --- */
-        .item-container {
-            display: flex;
-            align-items: center;
-            margin-bottom: 25px;
-        }
-
-        .img-school {
-            width: 80px;
-            height: 60px;
-            object-fit: cover; /* Para que la foto de la escuela no se deforme */
-            border-radius: 4px;
-            margin-right: 15px;
-            border: 1px solid #ddd;
-        }
-
-        .img-logo-coursera {
-            width: 40px;
-            height: 40px;
-            object-fit: contain;
-            margin-right: 15px;
-        }
-
-        .text-content h3 {
-            margin: 0;
-            font-size: 1rem;
-            text-transform: uppercase;
-        }
-
-        .text-content p {
-            margin: 2px 0;
+        .contact-list {
+            list-style: none;
+            padding: 0;
+            width: 100%;
             font-size: 0.9rem;
             color: var(--color-subtitulo);
         }
 
-        .date-label {
-            font-weight: 700;
-            font-size: 0.8rem;
-            color: var(--color-subtitulo);
+        .contact-list li {
+            margin-bottom: 15px;
+            display: flex;
+            align-items: flex-start;
         }
+
+        .contact-list img {
+            width: 20px;
+            height: 20px;
+            margin-right: 15px;
+        }
+
+        .idiomas-list {
+            list-style: square;
+            padding-left: 20px;
+            width: 100%;
+            font-size: 0.9rem;
+        }
+
+        /* COLUMNA DERECHA */
+        .right-column {
+            width: 62%;
+            padding: 60px 40px;
+            box-sizing: border-box;
+            display: flex;
+            flex-direction: column;
+        }
+
+        header {
+            text-align: right;
+            margin-bottom: 40px;
+        }
+
+        header h1 {
+            font-family: 'Playfair Display SC', serif;
+            font-size: 4rem;
+            margin: 0;
+            color: var(--color-titulo);
+            letter-spacing: -2px;
+        }
+
+        header h2 {
+            font-size: 1rem;
+            text-transform: uppercase;
+            font-weight: 700;
+        }
+
+        .section-title {
+            font-size: 1.1rem;
+            text-transform: uppercase;
+            background-color: var(--highlight-pink);
+            padding: 8px 15px;
+            border-radius: 4px;
+            margin-bottom: 25px;
+        }
+
+        .content-block {
+            margin-bottom: 20px;
+        }
+
+        /* Estilos para la imagen de la escuela */
+        .school-img {
+            width: 100%;
+            height: 120px;
+            object-fit: cover;
+            border-radius: 4px;
+            margin-bottom: 15px;
+            border: 1px solid #ddd;
+        }
+
+        /* Estilos para el logo de Coursera */
+        .coursera-logo {
+            width: 80px;
+            height: auto;
+            margin-top: 10px;
+            display: block;
+        }
+
+        .actualizaciones-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .actualizaciones-list li {
+            margin-bottom: 25px;
+            border-left: 3px solid var(--highlight-pink);
+            padding-left: 15px;
+        }
+
     </style>
 </head>
 <body>
@@ -141,67 +188,62 @@
     <div class="cv-container">
         <aside class="left-column">
             <div class="photo-container">
-                <img src="CV/foto_axel.jpg" alt="Axel Hernández">
+                <img src="CV/foto_axel.jpg" alt="Foto de Axel Hernández">
             </div>
 
             <h2>SOBRE MÍ</h2>
-            <p style="font-size: 0.85rem; text-align: justify; line-height: 1.5;">
-                Soy una persona responsable, disciplinada, con carisma, me gusta aprender nuevas cosas...
-            </p>
+            <p>Soy una persona responsable, disciplinada, con carisma, me gusta aprender nuevas cosas, ver y descubrir el cómo se pueden hacer y mejorar. Disfruto hacer ejercicio y cocinar, ya que me ayuda mucho manteniéndome activo y desarrollo nuevas creatividades.</p>
 
             <h2>CONTACTO</h2>
-            <p style="font-size: 0.9rem; width: 100%;">📞 7296321090</p>
-            <p style="font-size: 0.9rem; width: 100%;">📧 ah098742@gmail.com</p>
-            <p style="font-size: 0.9rem; width: 100%;">📍 Jiquipilco, México</p>
+            <ul class="contact-list">
+                <li><img src="CV/icon-phone.png" alt="Icono"> 7296321090</li>
+                <li><img src="CV/icon-mail.png" alt="Icono"> ah098742@gmail.com</li>
+                <li><img src="CV/icon-location.png" alt="Icono"> CALLE AV. principal S/N, JIQUIPILCO</li>
+            </ul>
+
+            <h2 style="margin-top: 40px;">IDIOMAS</h2>
+            <ul class="idiomas-list">
+                <li>Español (Nativo)</li>
+            </ul>
         </aside>
 
         <main class="right-column">
             <header>
                 <h1>Axel</h1>
-                <h1>Hernández</h1>
-                <h2 style="font-size: 1rem; color: var(--color-subtitulo);">ESTUDIANTE DE PREPARATORIA</h2>
+                <h1 style="margin-top: -20px;">Hernández</h1>
+                <h2>ESTUDIANTE DE PREPARATORIA</h2>
             </header>
 
             <section>
                 <h2 class="section-title">FORMACIÓN ACADÉMICA</h2>
                 
-                <div class="item-container">
-                    <img src="CV/escuela_secundaria.jpg" alt="Foto Escuela" class="img-school">
-                    <div class="text-content">
-                        <h3>Instituto Cultural Canadiense</h3>
-                        <p>Secundaria</p>
-                        <span class="date-label">2020 - 2023</span>
-                    </div>
+                <img src="CV/escuela.jpg" alt="Instituto Cultural Canadiense" class="school-img">
+
+                <div class="content-block">
+                    <h3>INSTITUTO CULTURAL CANADIENSE</h3>
+                    <p>Secundaria (2020-2023)</p>
                 </div>
 
-                <div class="item-container">
-                    <img src="CV/escuela_preparatoria.jpg" alt="Foto Escuela" class="img-school">
-                    <div class="text-content">
-                        <h3>Instituto Cultural Canadiense</h3>
-                        <p>Preparatoria</p>
-                        <span class="date-label">2023 - 2026</span>
-                    </div>
+                <div class="content-block">
+                    <h3>INSTITUTO CULTURAL CANADIENSE</h3>
+                    <p>Preparatoria (2023-2026)</p>
                 </div>
             </section>
 
-            <section style="margin-top: 40px;">
+            <section style="margin-top: 20px;">
                 <h2 class="section-title">ACTUALIZACIONES</h2>
                 
-                <div class="item-container">
-                    <img src="CV/logo_coursera.png" alt="Coursera" class="img-logo-coursera">
-                    <div class="text-content">
-                        <h3>Introducción a las Redes Sociales</h3>
-                        <span class="date-label">MARZO 2026</span>
-                    </div>
-                </div>
-
-                <div class="item-container">
-                    <img src="CV/logo_coursera.png" alt="Coursera" class="img-logo-coursera">
-                    <div class="text-content">
-                        <h3>Cómo invertir mi idea de empresa</h3>
-                        <span class="date-label">MARZO 2025</span>
-                    </div>
-                </div>
+                <ul class="actualizaciones-list">
+                    <li>
+                        <strong>CURSO DE INTRODUCCIÓN A LAS REDES SOCIALES</strong>
+                        <span>MARZO 2026</span>
+                        <img src="CV/logo-coursera.png" alt="Logo Coursera" class="coursera-logo">
+                    </li>
+                    <li>
+                        <strong>CURSO DE CÓMO INVERTIR MI IDEA DE EMPRESA</strong>
+                        <span>MARZO 2025</span>
+                    </li>
+                </ul>
             </section>
         </main>
     </div>
